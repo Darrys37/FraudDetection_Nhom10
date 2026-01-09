@@ -1,0 +1,7 @@
+các thư viện cần import vào trong notebook
+pandas
+numpy
+matplotlib
+seaborn
+scikit-learn
+xgboost
