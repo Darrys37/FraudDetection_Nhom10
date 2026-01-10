@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt
 import seaborn as sns
+import numpy as np
 from sklearn.metrics import classification_report, confusion_matrix, roc_curve, auc
 
 def evaluate_model(model, X_test, y_test, model_name="Model"):
@@ -31,3 +32,31 @@ def evaluate_model(model, X_test, y_test, model_name="Model"):
     plt.title(f'ROC Curve - {model_name}')
     plt.legend()
     # ĐÃ XÓA plt.show() Ở ĐÂY
+    
+def plot_feature_importance(model, feature_names, model_name="Model"):
+    """Vẽ biểu đồ Top 10 Feature Importance"""
+    print(f"-> Đang vẽ Feature Importance cho {model_name}...")
+    
+    # Kiểm tra xem model có thuộc tính feature_importances_ không
+    if not hasattr(model, 'feature_importances_'):
+        print(f"Cảnh báo: {model_name} không hỗ trợ feature_importances_")
+        return
+
+    importances = model.feature_importances_
+    
+    # Sắp xếp giảm dần và lấy top 10
+    indices = np.argsort(importances)[::-1][:10]
+    
+    top_features = [feature_names[i] for i in indices]
+    top_importances = importances[indices]
+
+    # Vẽ biểu đồ
+    plt.figure(figsize=(10, 5))
+    # Chọn màu khác nhau cho sinh động (Random Forest: Viridis, XGBoost: Magma)
+    palette = "viridis" if "Random" in model_name else "magma"
+    
+    sns.barplot(x=top_importances, y=top_features, palette=palette)
+    plt.title(f"Top 10 Feature Importance - {model_name} (After Tuning)")
+    plt.xlabel("Mức độ quan trọng")
+    plt.tight_layout()
+    # Không show(), để dành show 1 lần ở main
