@@ -7,8 +7,8 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 from src.preprocessing import load_and_clean_data, prepare_data_for_model
 from src.feature_engineering import create_new_features
-from src.model_DecisionTree_DoXuanHuong import train_decision_tree
-from src.model_RandomForest_TranTatPhat import train_random_forest
+from src.model_DecisionTree_TranTatPhat import train_decision_tree  
+from src.model_RandomForest_DoXuanHuong import train_random_forest 
 from src.model_XGBoost_NguyenHuynhAnhTuan import train_xgboost
 from src.evaluation import evaluate_model, plot_feature_importance
 # --- SỬA DÒNG DƯỚI ĐÂY ---
