@@ -21,7 +21,6 @@ def main():
     df = load_and_clean_data(data_path)
     df = create_new_features(df)
     
-    # --- THÊM ĐOẠN NÀY (YÊU CẦU CỦA TUẤN) ---
     # Chạy phân tích EDA tổng quan trước khi đưa vào model
     # Lưu ý: Khi biểu đồ hiện lên, mày phải tắt biểu đồ đi thì code mới chạy tiếp phần train model nhé.
     run_eda_analysis(df) 

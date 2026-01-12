@@ -21,13 +21,12 @@ def train_xgboost(X_train, y_train):
         use_label_encoder=False
     )
 
-    # --- [MỚI] BƯỚC SO SÁNH TRƯỚC KHI TUNING ---
+    # BƯỚC SO SÁNH TRƯỚC KHI TUNING
     print("1. [BEFORE] Đang chạy Model Mặc định để so sánh...")
     xgb_base.fit(X_train, y_train)
     y_pred_base = xgb_base.predict(X_train)
     base_recall = recall_score(y_train, y_pred_base)
     print(f"   -> Recall (Mặc định): {base_recall:.2%}")
-    # -------------------------------------------
 
     # 3. Thiết lập Param Grid (GIỮ NGUYÊN BẢN GỐC)
     param_grid = {
@@ -43,8 +42,8 @@ def train_xgboost(X_train, y_train):
     grid_search = GridSearchCV(
         estimator=xgb_base,
         param_grid=param_grid,
-        cv=5,               # Giữ nguyên
-        scoring='recall',   # Giữ nguyên
+        cv=5,               
+        scoring='recall',   
         n_jobs=-1,
         verbose=1
     )
@@ -52,7 +51,6 @@ def train_xgboost(X_train, y_train):
     grid_search.fit(X_train, y_train)
     best_xgb = grid_search.best_estimator_
     
-    # --- [MỚI] TÍNH TOÁN HIỆU QUẢ ---
     print("\nBest Parameters cho XGBoost:")
     print(grid_search.best_params_)
     
@@ -60,9 +58,8 @@ def train_xgboost(X_train, y_train):
     tuned_recall = recall_score(y_train, y_pred_tuned)
     print(f"   -> Recall (Sau Tuning): {tuned_recall:.2%}")
     print(f"==> HIỆU QUẢ TUNING: {(tuned_recall - base_recall):+.2%}")
-    # --------------------------------
 
-    # 5. Cross-validation kiểm chứng (GIỮ NGUYÊN)
+    # 5. Cross-validation kiểm chứng
     print("\n-> Đang chạy Cross-validation (cv=10)...")
     cv_recall = cross_val_score(best_xgb, X_train, y_train, cv=10, scoring='recall')
     print(f"Mean Recall trên CV=10 (train): {cv_recall.mean():.2%} ± {cv_recall.std():.4f}")
