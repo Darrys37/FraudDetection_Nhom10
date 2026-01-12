@@ -23,15 +23,11 @@ CÁCH 1: Chạy quy trình Huấn luyện & Đánh giá (Backend)
   (Load dữ liệu -> Xử lý -> Train 3 Models -> Xuất báo cáo so sánh)
 
   python src/main.py
-
-- Kết quả:
-  + Hiển thị các chỉ số Recall, F1-Score trên Terminal.
-  + Lưu các model đã train vào thư mục models/ (file .pkl).
-  + Tự động lưu file dữ liệu đã làm sạch vào data/.
-
+  
 CÁCH 2: Chạy Giao diện Web (Frontend - Streamlit)
 - Để mở ứng dụng Demo kiểm tra gian lận (có biểu đồ trực quan):
 
   python -m streamlit run app.py
 
 - Hệ thống sẽ mở trình duyệt tại địa chỉ: http://localhost:8501
+
