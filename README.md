@@ -1,6 +1,4 @@
-=============================================================================
 PHÁT HIỆN GIAN LẬN GIAO DỊCH (E-Commerce Fraud Detection Dataset) - NHÓM 10
-=============================================================================
 
 Dự án áp dụng các kỹ thuật Học máy (Machine Learning) để phân loại và phát 
 hiện các giao dịch thẻ tín dụng gian lận. Hệ thống giải quyết bài toán mất 
