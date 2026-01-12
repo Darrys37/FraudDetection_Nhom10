@@ -37,26 +37,27 @@ CÁCH 2: Chạy Giao diện Web (Frontend - Streamlit)
 - Hệ thống sẽ mở trình duyệt tại địa chỉ: http://localhost:8501
 
 -----------------------------------------------------------------------------
-3. CẤU TRÚC THƯ MỤC SOURCE CODE
+3. CAU TRUC THU MUC SOURCE CODE
 -----------------------------------------------------------------------------
 FraudDetection_Nhom10/
+|
 |-- data/
-|   |-- transactions.csv               # Dữ liệu giao dịch gốc
+|   |-- transactions.csv               # Du lieu giao dich goc
 |
-|-- models/                            # Chứa các file model (.pkl) sau khi train
+|-- models/                            # Chua cac file model (.pkl)
 |
-|-- src/                               # MÃ NGUỒN CHÍNH
-|   |-- eda.py                         # Phân tích khám phá dữ liệu
-|   |-- preprocessing.py               # Làm sạch & Cân bằng dữ liệu (Undersampling)
-|   |-- feature_engineering.py         # Tạo đặc trưng mới (Feature Engineering)
-|   |-- evaluation.py                  # Các hàm đánh giá & vẽ biểu đồ
+|-- src/                               # MA NGUON CHINH
+|   |-- eda.py                         # Phan tich kham pha du lieu
+|   |-- preprocessing.py               # Lam sach & Can bang du lieu
+|   |-- feature_engineering.py         # Tao dac trung moi
+|   |-- evaluation.py                  # Cac ham danh gia & ve bieu do
 |   |-- model_DecisionTree_TranTatPhat.py   # Model Decision Tree
 |   |-- model_RandomForest_DoXuanHuong.py   # Model Random Forest
 |   |-- model_XGBoost_NguyenHuynhAnhTuan.py # Model XGBoost
-|   |-- main.py                        # File điều phối luồng chạy chính
+|   |-- main.py                        # File dieu phoi luong chay chinh
 |
-|-- app.py                             # Giao diện Web Streamlit
-|-- requirements.txt                   # Danh sách thư viện
-|-- README.txt                         # Hướng dẫn sử dụng
-|-- N10_report.pdf                     # Báo cáo project
-|-- temp_uploaded.csv                  # File tạm sinh ra khi upload dữ liệu trên Web
+|-- app.py                             # Giao dien Web Streamlit
+|-- requirements.txt                   # Danh sach thu vien
+|-- README.txt                         # Huong dan su dung
+|-- N10_report.pdf                     # Bao cao project
+|-- temp_uploaded.csv                  # File tam sinh ra khi upload (co the xoa)
