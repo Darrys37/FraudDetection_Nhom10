@@ -13,7 +13,7 @@ khai ứng dụng Web thực tế.
 - Bước 1: Clone dự án hoặc tải source code về máy.
 - Bước 2: Cài đặt các thư viện phụ thuộc bằng lệnh sau:
   
-  pip install -r requirements.txt
+  python -m pip install -r requirements.txt
 
 -----------------------------------------------------------------------------
 2. HƯỚNG DẪN CHẠY CHƯƠNG TRÌNH
