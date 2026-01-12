@@ -35,29 +35,3 @@ CÁCH 2: Chạy Giao diện Web (Frontend - Streamlit)
   python -m streamlit run app.py
 
 - Hệ thống sẽ mở trình duyệt tại địa chỉ: http://localhost:8501
-
------------------------------------------------------------------------------
-3. CAU TRUC THU MUC SOURCE CODE
------------------------------------------------------------------------------
-FraudDetection_Nhom10/
-|
-|-- data/
-|   |-- transactions.csv               # Du lieu giao dich goc
-|
-|-- models/                            # Chua cac file model (.pkl)
-|
-|-- src/                               # MA NGUON CHINH
-|   |-- eda.py                         # Phan tich kham pha du lieu
-|   |-- preprocessing.py               # Lam sach & Can bang du lieu
-|   |-- feature_engineering.py         # Tao dac trung moi
-|   |-- evaluation.py                  # Cac ham danh gia & ve bieu do
-|   |-- model_DecisionTree_TranTatPhat.py   # Model Decision Tree
-|   |-- model_RandomForest_DoXuanHuong.py   # Model Random Forest
-|   |-- model_XGBoost_NguyenHuynhAnhTuan.py # Model XGBoost
-|   |-- main.py                        # File dieu phoi luong chay chinh
-|
-|-- app.py                             # Giao dien Web Streamlit
-|-- requirements.txt                   # Danh sach thu vien
-|-- README.txt                         # Huong dan su dung
-|-- N10_report.pdf                     # Bao cao project
-|-- temp_uploaded.csv                  # File tam sinh ra khi upload (co the xoa)
